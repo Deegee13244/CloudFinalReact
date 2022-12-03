@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import { getRequest, postRequest } from "../../utils/request"
+import { postRequest } from "../../utils/request"
 import "./style.css"
 
 const Register = () => {

@@ -1,5 +1,5 @@
 const b_url = "http://127.0.0.1:5000/"
-export const getRequest = (ep) => {
+export const getRequest = async (ep) => {
   const url = b_url + ep
   const options = {
     method: "GET",
@@ -8,11 +8,18 @@ export const getRequest = (ep) => {
       "Content-Type": "application/json;charset=UTF-8",
     },
   }
-  fetch(url, options).then((response) => console.log(response))
-  // .then((data) => {
-  //   return data
-  // })
-  return true
+  const result = await fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.result) {
+        return data.result
+      } else {
+        throw data
+      }
+    })
+    .catch((error) => error)
+
+  return result
 }
 
 export const postRequest = async (ep, values) => {
