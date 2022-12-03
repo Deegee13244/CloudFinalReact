@@ -13,7 +13,7 @@ const Login = () => {
     const result = await postRequest("login-user", { username, password })
     if (result?.email && result?.username) {
       localStorage.setItem("user", username)
-      navigate("/dashboard")
+      navigate("/main")
     } else {
       alert(result?.error)
     }

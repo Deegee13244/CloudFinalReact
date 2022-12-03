@@ -18,7 +18,7 @@ const Register = () => {
     })
     if (result?.email && result?.username) {
       localStorage.setItem("user", username)
-      navigate("/dashboard")
+      navigate("/main")
     } else {
       alert(result?.error)
     }
