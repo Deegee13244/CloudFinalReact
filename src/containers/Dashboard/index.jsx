@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -11,43 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts"
 import { getRequest } from "../../utils/request"
-const data = [
-  {
-    name: "Page A",
-    count: 4000,
-    pv: 2400,
-  },
-  {
-    name: "Page B",
-    count: 3000,
-    pv: 1398,
-  },
-  {
-    name: "Page C",
-    count: 2000,
-    pv: 9800,
-  },
-  {
-    name: "Page D",
-    count: 2780,
-    pv: 3908,
-  },
-  {
-    name: "Page E",
-    count: 1890,
-    pv: 4800,
-  },
-  {
-    name: "Page F",
-    count: 2390,
-    pv: 3800,
-  },
-  {
-    name: "Page G",
-    count: 3490,
-    pv: 4300,
-  },
-]
+
 const Dashboard = () => {
   const [ageData, setAgeData] = useState([])
 

@@ -47,3 +47,28 @@ export const postRequest = async (ep, values) => {
 
   return result
 }
+
+export const postUploadRequest = async (ep, fileBody) => {
+  const url = b_url + ep
+  const options = {
+    method: "POST",
+    headers: {
+      //   Accept: "application/json",
+      "Content-Type": "multipart/form-data",
+    },
+    body: fileBody,
+  }
+
+  const result = await fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.result) {
+        return data.result
+      } else {
+        throw data
+      }
+    })
+    .catch((error) => error)
+
+  return result
+}

@@ -8,6 +8,7 @@ import Datastore from "../containers/Datastore"
 import ProtectedRoutes from "./ProtectedRoutes"
 import PublicRoutes from "./PublicRoutes"
 import Search from "../containers/Search"
+import Upload from "../containers/Upload"
 
 const MainRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const MainRoutes = () => {
             <Route path="/main/search" element={<Search />} />
             <Route path="/main/datastore" element={<Datastore />} />
             <Route path="/main/dashboard" element={<Dashboard />} />
+            <Route path="/main/upload" element={<Upload />} />
           </Route>
         </Route>
 

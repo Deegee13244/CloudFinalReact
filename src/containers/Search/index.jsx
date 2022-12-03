@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useCallback } from "react"
 import { getRequest } from "../../utils/request"
 import { Table } from "reactstrap"
 
@@ -6,21 +6,21 @@ const Search = () => {
   const [value, setValue] = useState(10)
   const [totalData, setTotalData] = useState([])
 
-  React.useEffect(() => {
-    onClickSearch()
-  }, [])
-
   const onChangeValue = (e) => {
     setValue(e.target.value)
   }
 
-  const onClickSearch = async () => {
+  const onClickSearch = useCallback(async () => {
     if (isNaN(value)) {
       return alert("Value must be a number")
     }
     const result = await getRequest(`datastore?value=${value}`)
     setTotalData(result)
-  }
+  }, [value])
+
+  React.useEffect(() => {
+    onClickSearch()
+  }, [onClickSearch])
 
   return (
     <>

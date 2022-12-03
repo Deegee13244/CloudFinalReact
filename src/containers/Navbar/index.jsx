@@ -15,6 +15,9 @@ const Navbar = () => {
         <NavItem>
           <NavLink href="/main/datastore">Datastore</NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink href="/main/upload">Upload</NavLink>
+        </NavItem>
       </Nav>
     </div>
   )
