@@ -1,20 +1,20 @@
 import React from "react"
 import { Nav, NavItem, NavLink } from "reactstrap"
+import "./style.css"
 
 const Navbar = () => {
   return (
     <div>
-      <p>List Based</p>
-      <Nav>
+      <Nav className="nav-container">
         <NavItem>
-          <NavLink href="/main">Main</NavLink>
+          <NavLink href="/main">Data pull</NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="/main/dashboard">Dashboard</NavLink>
         </NavItem>
-        <NavItem>
+        {/* <NavItem>
           <NavLink href="/main/datastore">Datastore</NavLink>
-        </NavItem>
+        </NavItem> */}
         <NavItem>
           <NavLink href="/main/upload">Upload</NavLink>
         </NavItem>

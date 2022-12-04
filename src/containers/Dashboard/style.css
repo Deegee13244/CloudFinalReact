@@ -1,0 +1,13 @@
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+h3 {
+  text-align: center;
+}
+
+.dashboard-summary-container {
+  margin: 20px 0;
+}

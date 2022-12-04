@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react"
 import { getRequest } from "../../utils/request"
 import { Table } from "reactstrap"
+import "./style.css"
 
 const Search = () => {
   const [value, setValue] = useState(10)
@@ -25,24 +26,33 @@ const Search = () => {
   return (
     <>
       <div className="search">
-        <label htmlFor="search-input" className="label">
-          HSHD_NUM
-        </label>
-        <input
-          type="text"
-          id="register-email"
-          className="input"
-          value={value}
-          onChange={onChangeValue}
-          required
-        />
+        <div className="input-container">
+          <div className="search-input-container">
+            <label htmlFor="search-input" className="label">
+              HSHD_NUM
+            </label>
+            <input
+              type="text"
+              id="register-email"
+              className="input"
+              value={value}
+              onChange={onChangeValue}
+              required
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={onClickSearch}
+            className="button search-page-button"
+          >
+            Get Table
+          </button>
+        </div>
       </div>
-      <button type="button" onClick={onClickSearch} className="button">
-        Get Table
-      </button>
 
       {totalData.length > 0 ? (
-        <Table>
+        <Table className="table">
           <thead>
             <tr>
               <th>HSHD_NUM</th>
@@ -56,12 +66,12 @@ const Search = () => {
           <tbody>
             {totalData.map((item) => (
               <tr>
-                <th scope="row">{item.HSHD_NUM}</th>
-                <th scope="row">{item.BASKET_NUM}</th>
-                <th scope="row">{item.PURCHASE}</th>
-                <th scope="row">{item.PRODUCT_NUM}</th>
-                <th scope="row">{item.DEPARTMENT}</th>
-                <th scope="row">{item.COMMODITY}</th>
+                <td>{item.HSHD_NUM}</td>
+                <td>{item.BASKET_NUM}</td>
+                <td>{item.PURCHASE}</td>
+                <td>{item.PRODUCT_NUM}</td>
+                <td>{item.DEPARTMENT}</td>
+                <td>{item.COMMODITY}</td>
               </tr>
             ))}
           </tbody>

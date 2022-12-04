@@ -1,0 +1,19 @@
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.upload-item {
+  margin: 20px;
+}
+
+.dropdown {
+  margin-bottom: 20px;
+}
+
+.file-input {
+  margin-top: 20px;
+}

@@ -1,5 +1,5 @@
-// const b_url = "http://127.0.0.1:5000/"
-const b_url = "https://cloud-computing-group47.azurewebsites.net/"
+const b_url = "http://127.0.0.1:5000/"
+// const b_url = "https://cloud-computing-group47.azurewebsites.net/"
 export const getRequest = async (ep) => {
   const url = b_url + ep
   const options = {
@@ -49,13 +49,14 @@ export const postRequest = async (ep, values) => {
 }
 
 export const postUploadRequest = async (ep, fileBody) => {
+  console.log(fileBody)
   const url = b_url + ep
   const options = {
     method: "POST",
-    headers: {
-      //   Accept: "application/json",
-      "Content-Type": "multipart/form-data",
-    },
+    // headers: {
+    //   // Accept: "application/json",
+    //   "Content-Type": "multipart/form-data",
+    // },
     body: fileBody,
   }
 
